@@ -7,7 +7,7 @@
 
 #include "raylib.h"
 
-const int  boardSize = 3;
+# define boardSize 3
 const char player1 = 'o';
 const char player2 = 'x';
 const int sizeXField = 120;
