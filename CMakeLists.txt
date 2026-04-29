@@ -7,7 +7,6 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 # 5. Automatically generate GitHub Actions Workflow
 set(WORKFLOW_PATH "${CMAKE_SOURCE_DIR}/.github/workflows/build.yml")
 set(WORKFLOW_CONTENT [=[
-
 name: Build and Package
 
 on:
@@ -34,6 +33,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    # This step ensures CMake 4.2 is installed regardless of the runner's default
+    - name: Setup CMake 4.2
+      uses: lukka/get-cmake@latest
+      with:
+        cmakeVersion: 4.2.0
+
     - name: Install Linux Dependencies
       if: runner.os == 'Linux'
       run: |
@@ -54,7 +59,6 @@ jobs:
         else
           cp build/${{ matrix.executable_name }} dist/
         fi
-        # Copy assets if they exist
         if [ -d "assets" ]; then cp -r assets dist/; fi
       shell: bash
 
