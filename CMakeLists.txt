@@ -24,10 +24,10 @@ jobs:
         include:
           - os: ubuntu-latest
             artifact_name: linux-build
-            executable_name: ultimateCmake
+            executable_name: tictactoe
           - os: windows-latest
             artifact_name: windows-build
-            executable_name: ultimateCmake.exe
+            executable_name: tictactoe.exe
 
     runs-on: ${{ matrix.os }}
 
