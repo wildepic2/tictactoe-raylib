@@ -13,6 +13,7 @@ void gameLoop() {
     char currentPlayer= randomPlayer();
     char board[3][3];
 
+
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(RAYWHITE);
@@ -36,12 +37,11 @@ void gameLoop() {
                 break;
 
             case GAME:
-                char temp[2];
+                char temp[2] = {0};
                 temp[0] = currentPlayer;
-                temp[1] = '\n';
-                DrawText(temp, 190, 450 , 150 , RED);
 
                 printBoard(board ,false);
+                DrawText(temp, 190, 450 , 150 , RED);
                 retryInput = false;
                 playerBlock(board , currentPlayer);
 
@@ -99,11 +99,8 @@ void printBoard(char board[][boardSize] , bool won) {
 }
 
 void Input(int *fieldX , int *fieldY) {
-    int x , y;
-
     if (IsMouseButtonReleased(0)) {
-        x = GetMouseX();
-        y = GetMouseY();
+        int x =GetMouseX(), y = GetMouseY();
 
         for (int i = 0 ; i < 3 ; i++) {
             for (int ii = 0 ; ii < 3 ; ii++) {
@@ -116,7 +113,6 @@ void Input(int *fieldX , int *fieldY) {
         }
     }
 }
-
 
 void playerInput(char board[][boardSize] , char player) {
     int x = -1;
