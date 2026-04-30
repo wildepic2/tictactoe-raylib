@@ -188,7 +188,13 @@ bool checkDraw(char board[][boardSize]) {
 }
 
 void playerBlock(char board[][boardSize] , char player ) {
-    playerInput(board , player);
+    if (player == player1) {
+        aiInput(board , player);
+    }
+    else {
+        playerInput(board , player);
+    }
+
     checkIfPlayerWon(board, player);
 }
 

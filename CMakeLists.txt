@@ -4,7 +4,7 @@ project(tictactoe C)
 set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-# 5. Automatically generate GitHub Actions Workflow
+#Automatically generate GitHub Actions Workflow
 set(WORKFLOW_PATH "${CMAKE_SOURCE_DIR}/.github/workflows/build.yml")
 set(WORKFLOW_CONTENT [=[
 name: Build and Package
@@ -100,7 +100,7 @@ int main(void)
 }
 ]=])
 
-# 2. Create the directory and the file if it doesn't exist
+#Create the directory and the file if it doesn't exist
 if(NOT EXISTS ${MAIN_FILE})
     file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/src")
     file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/assets")
@@ -121,7 +121,10 @@ set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(raylib)
 
 # 4. Build Configuration
-add_executable(${PROJECT_NAME} ${MAIN_FILE})
+add_executable(${PROJECT_NAME} ${MAIN_FILE}
+        src/ai.h
+        src/ai.c
+        src/aiDataAndWeights.h)
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
 
 # Compiler Warnings
@@ -131,7 +134,7 @@ else()
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
-# Optional: assets-Ordner neben die ausführbare Datei kopieren
+#Optional: assets-Ordner neben die ausführbare Datei kopieren
 if(EXISTS "${CMAKE_SOURCE_DIR}/assets")
     add_custom_command(
             TARGET ${PROJECT_NAME} POST_BUILD

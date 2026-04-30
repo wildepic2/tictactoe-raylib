@@ -6,6 +6,7 @@
 #include <time.h>
 
 #include "raylib.h"
+#include "ai.h"
 
 # define boardSize 3
 const char player1 = 'o';
