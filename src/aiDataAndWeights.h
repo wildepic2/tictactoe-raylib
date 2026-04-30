@@ -78,13 +78,16 @@ const int fieldWeights[3][3] = {
 
 int winLineCategory[8];
 
-const int lineWithPlayerCategory =0;
-const int lineWhitoutPlayerOrAICategory = 1;
-const int lineWithOneAICategory = 2;
-const int lineWithTwoAICategory = 3;
+const int fullLines = 0;
+const int lineWithOnePlayerCategory =1;
+const int lineWithTwoPlayerCategory =2;
+const int lineWhitoutPlayerOrAICategory = 3;
+const int lineWithOneAICategory = 4;
+const int lineWithTwoAICategory = 5;
 
 const int winLineWeights[8] = {1 , 1, 1, 1, 1, 1 ,1 ,1};
-const int lineWithPlayerWeight =1;
+const int lineWithOnePlayerWeight =1;
+const int lineWithTwoPlayerWeight =1;
 const int lineWhitoutPlayerOrAIWeigt = 1;
 const int lineWithOneAIWeight = 1;
 const int lineWithTwoAIWeight = 1;

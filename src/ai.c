@@ -17,20 +17,29 @@ void initAI() {
     }
 }
 
-void calculateWinCategory(char board[][3] , char player) {
+void calculateWinLineCategory(char board[][3] , char ai) {
+    for (int i = 0; i < 8; i++) {
+        int aiCounter = 0;
+        int playerCounter = 0;
 
+        for (int ii = 0; ii < 3; ii++) {
+            for (int iii = 0; iii < 3; iii++) {
+
+            }
+        }
+    }
 }
 void calculateFieldWeights() {}
 void calculateFieldWeightRange() {}
 void getMove(int *x , int *y){}
 
-extern void aiInput(char board[][3] , char player){
+extern void aiInput(char board[][3] , char ai){
     int x = 0;
     int y = 0;
     initAI();
-    calculateWinCategory(board , player);
+    calculateWinLineCategory(board , ai);
     calculateFieldWeights();
     calculateFieldWeightRange();
     getMove(&x , &y);
-    board[x][y] = player;
+    board[x][y] = ai;
 }
