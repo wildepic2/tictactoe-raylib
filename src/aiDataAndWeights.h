@@ -9,9 +9,9 @@
 
 typedef struct {
     char arr[3][3];
-} winCondition2;
+} winLine;
 
-const winCondition2 winConditions2[8] = {
+const winLine winLines[8] = {
     {
         {
             {'x' , 'x' , 'x'},
@@ -69,5 +69,27 @@ const winCondition2 winConditions2[8] = {
                                    }
     }
 };
+
+const int fieldWeights[3][3] = {
+    {1, 1, 1},
+    {1, 1, 1},
+    {1, 1, 1}
+};
+
+int winLineCategory[8];
+
+const int lineWithPlayerCategory =0;
+const int lineWhitoutPlayerOrAICategory = 1;
+const int lineWithOneAICategory = 2;
+const int lineWithTwoAICategory = 3;
+
+const int winLineWeights[8] = {1 , 1, 1, 1, 1, 1 ,1 ,1};
+const int lineWithPlayerWeight =1;
+const int lineWhitoutPlayerOrAIWeigt = 1;
+const int lineWithOneAIWeight = 1;
+const int lineWithTwoAIWeight = 1;
+
+int fieldWeightsCalculated[3][3];
+int fieldWeightRangeCalculated[3][3][2];
 
 #endif //TICTACTOE_AIDATAANDWEIGHTS_H
