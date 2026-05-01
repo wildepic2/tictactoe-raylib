@@ -89,7 +89,7 @@ const int winLineWeights[8] = {1 , 1, 1, 1, 1, 1 ,1 ,1};
 const int lineWithOnePlayerWeight =1;
 const int lineWithTwoPlayerWeight =1;
 const int lineWhitoutPlayerOrAIWeigt = 1;
-const int lineWithOneAIWeight = 111;
+const int lineWithOneAIWeight = 1;
 const int lineWithTwoAIWeight = 1;
 
 int fieldWeightsCalculated[3][3];
