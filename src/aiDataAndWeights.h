@@ -73,9 +73,9 @@ const winLine winLines[8] = {
 // 1. Positional Value
 // Keep these as they are; they represent perfect Tic-Tac-Toe geometry.
 const int fieldWeights[3][3] = {
-    {9, 3, 9},
-    {3, 10, 3},
-    {9, 3, 9}
+    {3, 9, 3},
+    {9, 10, 9},
+    {3, 9, 3}
 };
 
 int winLineCategory[8];
