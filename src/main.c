@@ -1,4 +1,5 @@
 #include "data.h"
+#include "external/miniaudio.h"
 
 int main(void) {
     InitWindow(450, 650, "TIC TAC TOE");
