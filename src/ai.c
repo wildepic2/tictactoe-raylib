@@ -92,7 +92,6 @@ void calculateFieldWeights(char board[][3]) {
             }
         }
     }
-    printf("\n");
 }
 
 void calculateFieldWeightRange() {
@@ -111,6 +110,7 @@ void calculateFieldWeightRange() {
         }
     }
 }
+
 void getMove(int *x , int *y) {
     int sum = 0;
 
@@ -120,11 +120,11 @@ void getMove(int *x , int *y) {
         }
     }
 
-    srand(time(NULL));
-    int random = rand() % sum +1;
-
     for (int i = 0 ; i < 3 ; i++) {
         for (int ii = 0 ; ii < 3 ; ii++) {
+            srand(time(NULL));
+            int random = rand() % sum +1;
+
             if (random >= fieldWeightRangeCalculated[i][ii][0] && random <= fieldWeightRangeCalculated[i][ii][1]) {
                 *x = i;
                 *y = ii;
@@ -132,6 +132,7 @@ void getMove(int *x , int *y) {
             }
         }
     }
+
 }
 
 extern void aiInput(char board[][3] , char ai){
