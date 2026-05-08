@@ -73,9 +73,9 @@ const winLine winLines[8] = {
 // 1. Positional Value
 // Keep these as they are; they represent perfect Tic-Tac-Toe geometry.
 const int fieldWeights[3][3] = {
-    {3, 9, 3},
-    {9, 10, 9},
-    {3, 9, 3}
+    {9, 3, 9},
+    {3, 10, 3},
+    {9, 3, 9}
 };
 
 int winLineCategory[8];
@@ -93,7 +93,7 @@ const int winLineWeights[8] = {4, 8, 4, 4, 8, 4, 15, 15};
 
 // 3. Situational Weights (Reworked for maximum "Win/Draw" efficiency)
 const int lineWithTwoAIWeight = 1000;      // Total Decision: Always take the win
-const int lineWithTwoPlayerWeight = 400;  // Solid Block: Force the draw
+const int lineWithTwoPlayerWeight = 700;  // Solid Block: Force the draw
 const int lineWithOneAIWeight = 60;        // Strategic Setup: Create the fork
 const int lineWithOnePlayerWeight = 30;    // Aggressive Defense: Deny the player
 const int lineWhitoutPlayerOrAIWeigt = 20; // Early Game: Control the board
