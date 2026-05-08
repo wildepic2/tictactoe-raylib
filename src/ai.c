@@ -90,7 +90,6 @@ void calculateFieldWeights(char board[][3]) {
             if (board[i][ii] == 'x' || board[i][ii] == 'o') {
                 fieldWeightsCalculated[i][ii] = 0;
             }
-            printf("Field [%d,%d] %d\n", i, ii, fieldWeightsCalculated[i][ii]);
         }
     }
     printf("\n");
@@ -108,7 +107,6 @@ void calculateFieldWeightRange() {
                 fieldWeightRangeCalculated[i][ii][0] = last +1;
                 fieldWeightRangeCalculated[i][ii][1] = last + fieldWeightsCalculated[i][ii];
                 last = last + fieldWeightsCalculated[i][ii] ;
-                printf("Field [%d,%d] %d %d\n", i, ii, fieldWeightRangeCalculated[i][ii][0], fieldWeightRangeCalculated[i][ii][1]);
             }
         }
     }
@@ -124,12 +122,10 @@ void getMove(int *x , int *y) {
 
     srand(time(NULL));
     int random = rand() % sum +1;
-    printf("Random: %d\n", random);
 
     for (int i = 0 ; i < 3 ; i++) {
         for (int ii = 0 ; ii < 3 ; ii++) {
             if (random >= fieldWeightRangeCalculated[i][ii][0] && random <= fieldWeightRangeCalculated[i][ii][1]) {
-                printf("Found: [%d,%d]\n", i, ii);
                 *x = i;
                 *y = ii;
                 return;
